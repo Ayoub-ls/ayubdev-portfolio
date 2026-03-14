@@ -7,9 +7,11 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { motion } from 'motion/react';
+import { LanguageProvider } from './context/LanguageContext';
 
 export default function App() {
   return (
+    <LanguageProvider>
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-700">
       <Navbar />
       
@@ -55,5 +57,6 @@ export default function App() {
 
       <Footer />
     </div>
+    </LanguageProvider>
   );
 }

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formState, setFormState] = useState('idle'); // idle, sending, success
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormState('sending');
-    // Simulate API call
     setTimeout(() => {
       setFormState('success');
       setTimeout(() => setFormState('idle'), 5000);
@@ -26,11 +27,10 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-              Let's Work Together
+              {t.contact.heading}
             </h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-              Have a project in mind or just want to say hi? Feel free to reach out. 
-              I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+              {t.contact.subheading}
             </p>
 
             <div className="space-y-8">
@@ -39,15 +39,22 @@ export default function Contact() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Email Me</div>
-                  <a href="mailto:ayoublamara52@gmail.com" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
+                    {t.contact.emailMe}
+                  </div>
+                  <a
+                    href="mailto:ayoublamara52@gmail.com"
+                    className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+                  >
                     ayoublamara52@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="pt-8 border-t border-gray-100">
-                <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-6">Follow Me</div>
+                <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-6">
+                  {t.contact.followMe}
+                </div>
                 <div className="flex space-x-4">
                   {SOCIAL_LINKS.map((social) => (
                     <a
@@ -76,49 +83,55 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold text-gray-700 ml-1">Name</label>
+                  <label htmlFor="name" className="text-sm font-bold text-gray-700 ml-1">
+                    {t.contact.name}
+                  </label>
                   <input
                     type="text"
                     id="name"
                     required
-                    placeholder="John Doe"
+                    placeholder={t.contact.namePlaceholder}
                     className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold text-gray-700 ml-1">Email</label>
+                  <label htmlFor="email" className="text-sm font-bold text-gray-700 ml-1">
+                    {t.contact.email}
+                  </label>
                   <input
                     type="email"
                     id="email"
                     required
-                    placeholder="john@example.com"
+                    placeholder={t.contact.emailPlaceholder}
                     className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-gray-700 ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-bold text-gray-700 ml-1">
+                  {t.contact.message}
+                </label>
                 <textarea
                   id="message"
                   required
                   rows="5"
-                  placeholder="Tell me about your project..."
+                  placeholder={t.contact.messagePlaceholder}
                   className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 disabled={formState !== 'idle'}
                 className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center transition-all ${
-                  formState === 'success' 
-                    ? 'bg-green-500 text-white' 
+                  formState === 'success'
+                    ? 'bg-green-500 text-white'
                     : 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200 hover:shadow-xl hover:-translate-y-1'
                 }`}
               >
                 {formState === 'idle' && (
                   <>
-                    Send Message
+                    {t.contact.send}
                     <Send className="ml-2 w-5 h-5" />
                   </>
                 )}
@@ -127,7 +140,7 @@ export default function Contact() {
                 )}
                 {formState === 'success' && (
                   <>
-                    Message Sent!
+                    {t.contact.sent}
                     <CheckCircle className="ml-2 w-5 h-5" />
                   </>
                 )}

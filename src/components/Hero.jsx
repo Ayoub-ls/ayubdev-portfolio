@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const scrollToSection = (e, href) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -15,7 +18,7 @@ export default function Hero() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -27,39 +30,39 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
               </span>
-              <span>Available for Freelance</span>
+              <span>{t.hero.badge}</span>
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-[1.1] mb-6">
-              Hi, I'm <span className="text-blue-600">Ayub</span><br />
-              Frontend Web Developer
+              {t.hero.heading1} <span className="text-blue-600">ayub</span>Dev
+              <br />
+              {t.hero.heading2}
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl leading-relaxed">
-              I build modern, fast and beautiful websites using React and modern web technologies. 
-              Focused on creating exceptional digital experiences that drive results.
+              {t.hero.description}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <button 
+              <button
                 onClick={(e) => scrollToSection(e, '#projects')}
                 className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:-translate-y-1 flex items-center justify-center group"
               >
-                View Projects
+                {t.hero.viewProjects}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button 
+              <button
                 onClick={(e) => scrollToSection(e, '#contact')}
                 className="w-full sm:w-auto bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all hover:border-gray-300 flex items-center justify-center"
               >
-                Hire Me
+                {t.hero.hireMe}
               </button>
             </div>
           </motion.div>
@@ -72,7 +75,7 @@ export default function Hero() {
           >
             <div className="relative z-10 bg-white rounded-3xl shadow-2xl border border-gray-100 p-4 md:p-8 overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400"></div>
-              
+
               {/* Mock UI Element */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 mb-6">
@@ -80,10 +83,10 @@ export default function Hero() {
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
-                
+
                 <div className="h-4 w-3/4 bg-gray-100 rounded-full animate-pulse"></div>
                 <div className="h-4 w-1/2 bg-gray-100 rounded-full animate-pulse delay-75"></div>
-                
+
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="aspect-square bg-blue-50 rounded-2xl flex items-center justify-center">
                     <div className="w-8 h-8 rounded-lg bg-blue-200"></div>
