@@ -56,12 +56,12 @@ const translations = {
       viewCase: 'View Case Study',
       items: [
         {
-          name: 'E-Commerce Dashboard',
+          name: 'Amourshop',
           description:
-            'A comprehensive admin panel for managing products, orders, and customer data with real-time analytics.',
+            'This website presents the product to the clients and has a comprehensive admin panel for managing products, orders, and customer data with real-time analytics.',
         },
         {
-          name: 'SaaS Landing Page',
+          name: 'Badi Suspension',
           description:
             'A high-converting landing page for a software-as-a-service product with smooth animations.',
         },
@@ -166,7 +166,7 @@ const translations = {
       viewCase: 'عرض دراسة الحالة',
       items: [
         {
-          name: 'لوحة تحكم التجارة الإلكترونية',
+          name: 'Amourshop',
           description:
             'لوحة إدارة شاملة لإدارة المنتجات والطلبات وبيانات العملاء مع تحليلات فورية.',
         },
@@ -273,7 +273,7 @@ const translations = {
       viewCase: 'Voir l\'étude de cas',
       items: [
         {
-          name: 'Tableau de Bord E-Commerce',
+          name: 'Amourshop',
           description:
             'Un panneau d\'administration complet pour gérer les produits, commandes et données clients avec des analyses en temps réel.',
         },

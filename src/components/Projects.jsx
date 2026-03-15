@@ -4,8 +4,8 @@ import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const PROJECT_IMAGES = [
-  'https://picsum.photos/seed/dashboard/800/600',
-  'https://picsum.photos/seed/saas/800/600',
+  './images/amourshop.png',
+  './images/badisuspension.png',
   'https://picsum.photos/seed/portfolio/800/600',
 ];
 const PROJECT_TECH = [
@@ -13,7 +13,7 @@ const PROJECT_TECH = [
   ['React', 'Motion', 'Tailwind'],
   ['React', 'Vite', 'Tailwind'],
 ];
-const PROJECT_LINKS = ['#', '#', '#'];
+const PROJECT_LINKS = ['https://amourshop-ten.vercel.app/', 'https://badi-suspension.onrender.com/', '#'];
 
 export default function Projects() {
   const { t } = useLanguage();
