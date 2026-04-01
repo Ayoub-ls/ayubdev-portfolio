@@ -6,14 +6,14 @@ import { useLanguage } from '../context/LanguageContext';
 const PROJECT_IMAGES = [
   './images/amourshop.png',
   './images/badisuspension.png',
-  'https://picsum.photos/seed/portfolio/800/600',
+  './images/Lumina.png',
 ];
 const PROJECT_TECH = [
   ['React', 'Tailwind', 'Vite'],
   ['React', 'Motion', 'Tailwind'],
   ['React', 'Vite', 'Tailwind'],
 ];
-const PROJECT_LINKS = ['https://amourshop-ten.vercel.app/', 'https://badi-suspension.onrender.com/', '#'];
+const PROJECT_LINKS = ['https://amourshop-ten.vercel.app/', 'https://demo-suspension.netlify.app/', 'https://demo-boutique.netlify.app/'];
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -67,7 +67,7 @@ export default function Projects() {
               transition={{ delay: index * 0.1 }}
               className="group bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <a href={PROJECT_LINKS[index]} className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={PROJECT_IMAGES[index]}
                   alt={project.name}
@@ -92,7 +92,7 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </a>
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
