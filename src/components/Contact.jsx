@@ -1,153 +1,99 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Send, CheckCircle } from 'lucide-react';
-import { SOCIAL_LINKS } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
+import { Instagram, Facebook, Phone } from 'lucide-react';
+
+const TESTIMONIAL_IMAGES = [
+  "https://i.pravatar.cc/150?u=marcus",
+  "https://i.pravatar.cc/150?u=elena"
+];
 
 export default function Contact() {
   const { t } = useLanguage();
-  const [formState, setFormState] = useState('idle'); // idle, sending, success
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormState('sending');
-    setTimeout(() => {
-      setFormState('success');
-      setTimeout(() => setFormState('idle'), 5000);
-    }, 1500);
-  };
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="contact" className="py-20 md:py-32 px-4 relative z-10">
+      <div className="max-w-3xl mx-auto space-y-8">
+
+        {/* Testimonials */}
+        {(t.contact?.testimonials || []).map((testimonial, index) => (
           <motion.div
+            key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="bg-[#120018]/40 backdrop-blur-xl border border-white/5 p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden group hover:border-white/10 transition-colors duration-500"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t.contact.heading}
-            </h2>
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-              {t.contact.subheading}
+            {/* Quote Icon Background */}
+            <div className="absolute top-4 end-8 text-white/5 font-serif text-9xl leading-none select-none group-hover:text-white/10 transition-colors duration-500">
+              "
+            </div>
+
+            <p className="text-white/90 text-lg md:text-xl font-light italic leading-relaxed mb-8 relative z-10 text-center md:text-start">
+              {testimonial.quote}
             </p>
 
-            <div className="space-y-8">
-              <div className="flex items-center space-x-6 group">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">
-                    {t.contact.emailMe}
-                  </div>
-                  <a
-                    href="mailto:ayoublamara52@gmail.com"
-                    className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
-                  >
-                    ayoublamara52@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="pt-8 border-t border-gray-100">
-                <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-6">
-                  {t.contact.followMe}
-                </div>
-                <div className="flex space-x-4">
-                  {SOCIAL_LINKS.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all duration-300"
-                      title={social.name}
-                    >
-                      <social.icon size={20} />
-                    </a>
-                  ))}
-                </div>
+            <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4 space-x-0 relative z-10 text-center md:text-start">
+              <img
+                src={TESTIMONIAL_IMAGES[index]}
+                alt={testimonial.name}
+                className="w-16 h-16 md:w-12 md:h-12 rounded-xl object-cover border border-white/10"
+              />
+              <div className="md:ms-4 rtl:md:ms-0 rtl:md:me-4">
+                <h4 className="text-white font-bold text-sm tracking-wider uppercase">{testimonial.name}</h4>
+                <p className="text-[#00F2FF] text-xs font-medium">{testimonial.title}</p>
               </div>
             </div>
           </motion.div>
+        ))}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white p-8 md:p-10 rounded-[2rem] border border-gray-200 shadow-xl"
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold text-gray-700 ml-1">
-                    {t.contact.name}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    placeholder={t.contact.namePlaceholder}
-                    className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold text-gray-700 ml-1">
-                    {t.contact.email}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    placeholder={t.contact.emailPlaceholder}
-                    className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-gray-700 ml-1">
-                  {t.contact.message}
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows="5"
-                  placeholder={t.contact.messagePlaceholder}
-                  className="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
-                ></textarea>
-              </div>
+        {/* CTA / Contact Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="bg-[#120018]/60 backdrop-blur-2xl border border-white/10 p-10 md:p-16 rounded-[2.5rem] shadow-2xl text-center mt-12 relative overflow-hidden"
+        >
+          {/* Subtle glow effect in the background of the card */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#00F2FF]/10 via-transparent to-transparent opacity-50 blur-2xl pointer-events-none"></div>
 
-              <button
-                type="submit"
-                disabled={formState !== 'idle'}
-                className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center transition-all ${
-                  formState === 'success'
-                    ? 'bg-green-500 text-white'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200 hover:shadow-xl hover:-translate-y-1'
-                }`}
-              >
-                {formState === 'idle' && (
-                  <>
-                    {t.contact.send}
-                    <Send className="ml-2 w-5 h-5" />
-                  </>
-                )}
-                {formState === 'sending' && (
-                  <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                )}
-                {formState === 'success' && (
-                  <>
-                    {t.contact.sent}
-                    <CheckCircle className="ml-2 w-5 h-5" />
-                  </>
-                )}
-              </button>
-            </form>
-          </motion.div>
-        </div>
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+              {t.contact?.ctaHeading}
+            </h3>
+            <p className="text-white/70 text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed">
+              {t.contact?.ctaSubheading}
+            </p>
+
+            <a
+              href="mailto:ayoublamara52@gmail.com"
+              className="inline-block bg-[#00F2FF] text-[#120018] px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#00F2FF]/90 transition-all shadow-[0_0_20px_rgba(0,242,255,0.4)] hover:shadow-[0_0_35px_rgba(0,242,255,0.7)] hover:-translate-y-1 active:scale-95 w-full sm:w-auto mb-10"
+            >
+              {t.contact?.ctaButton}
+            </a>
+
+            {/* Social & Contact Details */}
+            <div className="flex flex-col items-center justify-center space-y-6 pt-8 border-t border-white/10 max-w-xs mx-auto">
+              <div className="flex space-x-6">
+                <a href="https://www.instagram.com/ayubdev/" className="text-white/40 hover:text-[#00F2FF] transition-colors" title="Instagram">
+                  <Instagram size={28} />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61587270189205&ref=PROFILE_EDIT_xav_ig_profile_page_web#" className="text-white/40 hover:text-[#00F2FF] transition-colors" title="Facebook">
+                  <Facebook size={28} />
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-white/80 bg-black/20 px-6 py-3 rounded-2xl border border-white/5">
+                <Phone size={18} className="text-[#00F2FF]" />
+                <span className="text-sm font-medium tracking-wide">
+                  +33 746639234 <span className="text-white/20 mx-1">/</span> +213 556436073
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

@@ -7,45 +7,23 @@ const translations = {
       projects: 'Projects',
       about: 'About',
       contact: 'Contact',
-      hireMe: 'Hire Me',
+      hireMe: 'Contact Me',
     },
     // Hero
     hero: {
       badge: 'Available for Freelance',
-      heading1: "Hi, We're",
-      heading2: 'Full Stack Web Developer Team',
+      heading1: "AI Powered Web Solutions",
       description:
-        'I build modern, fast and beautiful websites using React and modern web technologies. Focused on creating exceptional digital experiences that drive results.',
+        'I build modern, fast and beautiful websites using AI and modern web technologies. Focused on creating exceptional digital experiences that drive results.',
       viewProjects: 'View Projects',
-      hireMe: 'Hire Me',
-    },
-    // Services
-    services: {
-      heading: 'My Services',
-      subheading:
-        'I offer a wide range of frontend development services to help you build a stunning and functional online presence.',
-      items: [
-        {
-          title: 'Frontend Development',
-          description:
-            'Building responsive, high-performance web applications using modern frameworks like React.',
-        },
-        {
-          title: 'Website UI Design',
-          description:
-            'Creating intuitive and visually appealing user interfaces that provide great user experiences.',
-        },
-        {
-          title: 'Website Optimization',
-          description:
-            'Improving website speed, SEO, and overall performance for better user engagement.',
-        },
-        {
-          title: 'Bug Fixing',
-          description:
-            'Identifying and resolving technical issues to ensure your website runs smoothly and reliably.',
-        },
-      ],
+      hireMe: 'Contact Me',
+      metricsTitle: 'Live Metrics',
+      metric1Value: '300%',
+      metric1Label: 'Faster Lead Times',
+      metric2Value: '+85%',
+      metric2Label: 'Conversion Rate',
+      metric3Value: '24/7',
+      metric3Label: 'Automated AI Support',
     },
     // Projects
     projects: {
@@ -54,21 +32,33 @@ const translations = {
         'A selection of my recent work, showcasing my expertise in building modern web applications.',
       viewAll: 'View all on GitHub',
       viewCase: 'View Case Study',
+      realProjects: 'Real Projects',
+      demoProjects: 'Demo Projects',
       items: [
         {
           name: 'Amourshop',
           description:
-            'This website presents the product to the clients and has a comprehensive admin panel for managing products, orders, and customer data with real-time analytics.',
+            'A delightful online store offering colorful, comfortable, and safe clothing for children of all ages. From playful everyday outfits to special occasion wear, every piece is designed with kids\' joy and parents\' peace of mind in mind',
         },
         {
           name: 'Badi Suspension',
-          description:
-            'A high-converting landing page for a software-as-a-service product with smooth animations.',
+          description: 'Professional suspension repair and maintenance services to keep your ride smooth, safe, and road-ready. Quality parts, expert hands, fast results.',
         },
         {
-          name: 'Portfolio Template',
-          description:
-            'A modern and clean portfolio template designed for creative professionals to showcase their work.',
+          name: 'LUMINA',
+          description: 'A stylish online store offering modern and elegant women\'s clothing for every occasion, where fashion meets comfort and confidence.',
+        },
+        {
+          name: 'Men Styles',
+          description: 'A modern online store offering sharp and stylish men\'s clothing for every occasion. From casual everyday wear to refined formal looks, dress with confidence.',
+        },
+        {
+          name: 'ASIAN AVENUE',
+          description: 'A flavorful journey through the best of Asian cuisine, from savory stir-fries to rich noodle soups. Fresh ingredients, bold flavors, unforgettable dining.',
+        },
+        {
+          name: 'Barber Shop',
+          description: 'A premium barber shop delivering sharp cuts, clean fades, and classic shaves. Where style meets craft and every visit leaves you looking your best.',
         },
       ],
     },
@@ -88,20 +78,21 @@ const translations = {
     },
     // Contact
     contact: {
-      heading: "Let's Work Together",
-      subheading:
-        "Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
-      emailMe: 'Email Me',
-      followMe: 'Follow Me',
-      name: 'Name',
-      email: 'Email',
-      message: 'Message',
-      namePlaceholder: 'John Doe',
-      emailPlaceholder: 'john@example.com',
-      messagePlaceholder: 'Tell me about your project...',
-      send: 'Send Message',
-      sending: 'Sending...',
-      sent: 'Message Sent!',
+      testimonials: [
+        {
+          quote: "The website Ayoub created for me completely transformed my business. My conversion rate increased by up to 85% and I gained significantly more clients. Truly outstanding work!",
+          name: "Imad Lahcen",
+          title: "Owner of Amourshop",
+        },
+        {
+          quote: "The website Ayoub created for me made managing appointments incredibly easy and saved me so much time. My business has never run this smoothly!",
+          name: "Badis",
+          title: "Owner of Badi Suspension",
+        }
+      ],
+      ctaHeading: "Ready to build the future?",
+      ctaSubheading: "Currently accepting select projects for 2024. Let's discuss how AI can transform your digital footprint.",
+      ctaButton: "Initiate Connection",
     },
     // Footer
     footer: {
@@ -120,43 +111,22 @@ const translations = {
       projects: 'المشاريع',
       about: 'من أنا',
       contact: 'تواصل معي',
-      hireMe: 'وظفني',
+      hireMe: 'تواصل معي',
     },
     hero: {
       badge: 'متاح للعمل الحر',
-      heading1: 'مرحباً، نحن',
-      heading2: 'فريق تطوير الويب الشامل',
+      heading1: "الحلول الويب المعتمدة على الذكاء الاصطناعي",
       description:
-        'نبني مواقع ويب حديثة وسريعة وجميلة باستخدام React وأحدث تقنيات الويب، مع التركيز على إنشاء تجارب رقمية استثنائية تحقق نتائج رائعة.',
+        'نبني مواقع ويب حديثة وسريعة وجميلة باستخدام الذكاء الاصطناعي وأحدث تقنيات الويب، مع التركيز على إنشاء تجارب رقمية استثنائية تحقق نتائج رائعة.',
       viewProjects: 'عرض المشاريع',
-      hireMe: 'وظفني',
-    },
-    services: {
-      heading: 'خدماتي',
-      subheading:
-        'أقدم مجموعة واسعة من خدمات تطوير الواجهة الأمامية لمساعدتك على بناء حضور إلكتروني مذهل ووظيفي.',
-      items: [
-        {
-          title: 'تطوير الواجهة الأمامية',
-          description:
-            'بناء تطبيقات ويب سريعة الاستجابة وعالية الأداء باستخدام أطر عمل حديثة مثل React.',
-        },
-        {
-          title: 'تصميم واجهة المستخدم',
-          description:
-            'إنشاء واجهات مستخدم بديهية وجذابة بصريًا توفر تجربة مستخدم رائعة.',
-        },
-        {
-          title: 'تحسين أداء المواقع',
-          description:
-            'تحسين سرعة الموقع وتهيئته لمحركات البحث والأداء العام لتحقيق تفاعل أفضل للمستخدمين.',
-        },
-        {
-          title: 'إصلاح الأخطاء',
-          description:
-            'تحديد المشكلات التقنية وحلها لضمان تشغيل موقعك بسلاسة وكفاءة.',
-        },
-      ],
+      hireMe: 'تواصل معي',
+      metricsTitle: 'الإحصائيات المباشرة',
+      metric1Value: '300%',
+      metric1Label: 'أوقات تسليم أسرع',
+      metric2Value: '+85%',
+      metric2Label: 'معدل التحويل',
+      metric3Value: '24/7',
+      metric3Label: 'دعم آلي بالذكاء الاصطناعي',
     },
     projects: {
       heading: 'المشاريع المميزة',
@@ -164,21 +134,32 @@ const translations = {
         'مجموعة مختارة من أعمالي الأخيرة تُبرز خبرتي في بناء تطبيقات الويب الحديثة.',
       viewAll: 'عرض الكل على GitHub',
       viewCase: 'عرض دراسة الحالة',
+      realProjects: 'مشاريع حقيقية',
+      demoProjects: 'مشاريع تجريبية',
       items: [
         {
           name: 'Amourshop',
           description:
-            'لوحة إدارة شاملة لإدارة المنتجات والطلبات وبيانات العملاء مع تحليلات فورية.',
+            'متجر إلكتروني رائع يقدم ملابس ملونة ومريحة وآمنة للأطفال من جميع الأعمار. من الأزياء اليومية المرحة إلى ملابس المناسبات الخاصة، كل قطعة مصممة لإسعاد الأطفال وإطمئنان الوالدين.',
         },
         {
-          name: 'صفحة هبوط SaaS',
+          name: 'Badi Suspension',
           description:
-            'صفحة هبوط عالية التحويل لمنتج برمجي كخدمة مع رسوم متحركة سلسة.',
+            'خدمات احترافية لإصلاح وصيانة نظام التعليق لضمان قيادة سلسة وآمنة في جميع الأوقات. قطع عالية الجودة، أيدٍ خبيرة، نتائج سريعة.',
         },
         {
-          name: 'قالب ملف شخصي',
+          name: 'LUMINA',
           description:
-            'قالب ملف شخصي حديث ونظيف مصمم للمحترفين المبدعين لعرض أعمالهم.',
+            'متجر إلكتروني عصري يقدم ملابس نسائية أنيقة لكل المناسبات، حيث تلتقي الموضة بالراحة والثقة',
+        },
+        {
+          name: 'Men Styles',
+          description: 'متجر إلكتروني عصري يقدم ملابس رجالية أنيقة لكل المناسبات، من الملابس اليومية الكاجوال إلى الإطلالات الرسمية الراقية، لتتألق بثقة في كل خطوة.',
+        },
+        {
+          name: 'ASIAN AVENUE',
+          description:
+            'صالون حلاقة احترافي يقدم قصات دقيقة، تدرجات أنيقة وحلاقة كلاسيكية راقية. حيث تلتقي الأناقة بالحرفية لتخرج بأفضل إطلالة دائماً.',
         },
       ],
     },
@@ -196,20 +177,21 @@ const translations = {
         'أستكشف حاليًا Next.js 15 وأنماط الرسوم المتحركة المتقدمة مع Motion.',
     },
     contact: {
-      heading: 'لنعمل معًا',
-      subheading:
-        'هل لديك مشروع في ذهنك أو تريد فقط أن تقول مرحبًا؟ لا تتردد في التواصل. أنا دائمًا منفتح لمناقشة مشاريع جديدة وأفكار إبداعية.',
-      emailMe: 'راسلني',
-      followMe: 'تابعني',
-      name: 'الاسم',
-      email: 'البريد الإلكتروني',
-      message: 'الرسالة',
-      namePlaceholder: 'محمد أحمد',
-      emailPlaceholder: 'محمد@مثال.com',
-      messagePlaceholder: 'أخبرني عن مشروعك...',
-      send: 'إرسال الرسالة',
-      sending: 'جارٍ الإرسال...',
-      sent: 'تم الإرسال!',
+      testimonials: [
+        {
+          quote: "الموقع الإلكتروني الذي أنشأه لي أيوب غيّر عملي كلياً. ارتفع معدل التحويل لديّ بنسبة تصل إلى 85% واكتسبت عملاء أكثر بكثير. عمل رائع حقاً!",
+          name: "عماد لحسن",
+          title: "مالك متجر امورشوب",
+        },
+        {
+          quote: "الموقع الذي أنشأه لي أيوب جعل إدارة المواعيد أمراً سهلاً للغاية ووفّر عليّ الكثير من الوقت. عملي لم يسِر بهذه السلاسة من قبل",
+          name: "Badis",
+          title: "Oner of Badi Suspension",
+        }
+      ],
+      ctaHeading: "مستعد لبناء المستقبل؟",
+      ctaSubheading: "نقبل حاليًا مشاريع مختارة لعام 2024. دعنا نناقش كيف يمكن للذكاء الاصطناعي تحويل بصمتك الرقمية.",
+      ctaButton: "بدء التواصل",
     },
     footer: {
       tagline: 'نبني مستقبل الويب، بيكسل بيكسل.',
@@ -227,43 +209,22 @@ const translations = {
       projects: 'Projets',
       about: 'À propos',
       contact: 'Contact',
-      hireMe: 'M\'engager',
+      hireMe: 'M\'contacter',
     },
     hero: {
       badge: 'Disponible en Freelance',
-      heading1: 'Bonjour, nous sommes',
-      heading2: 'Équipe de développement Web Full Stack',
+      heading1: "Solutions web basées sur l'IA",
       description:
-        'Je crée des sites web modernes, rapides et beaux avec React et les technologies web actuelles, axés sur des expériences digitales exceptionnelles.',
+        'Je crée des sites web modernes, rapides et beaux avec l\'IA et les technologies web actuelles, axés sur des expériences digitales exceptionnelles.',
       viewProjects: 'Voir les projets',
-      hireMe: 'M\'engager',
-    },
-    services: {
-      heading: 'Mes Services',
-      subheading:
-        'Je propose une large gamme de services de développement frontend pour vous aider à créer une présence en ligne magnifique et fonctionnelle.',
-      items: [
-        {
-          title: 'Développement Frontend',
-          description:
-            'Création d\'applications web performantes et responsives avec des frameworks modernes comme React.',
-        },
-        {
-          title: 'Design UI de Sites Web',
-          description:
-            'Conception d\'interfaces utilisateur intuitives et visuellement attrayantes offrant une excellente expérience.',
-        },
-        {
-          title: 'Optimisation de Sites Web',
-          description:
-            'Amélioration de la vitesse, du SEO et des performances globales pour un meilleur engagement utilisateur.',
-        },
-        {
-          title: 'Correction de Bugs',
-          description:
-            'Identification et résolution des problèmes techniques pour assurer le bon fonctionnement de votre site.',
-        },
-      ],
+      hireMe: 'M\'contacter',
+      metricsTitle: 'Métrique en Direct',
+      metric1Value: '300%',
+      metric1Label: 'Délais plus rapides',
+      metric2Value: '+85%',
+      metric2Label: 'Taux de conversion',
+      metric3Value: '24/7',
+      metric3Label: 'Support IA Automatisé',
     },
     projects: {
       heading: 'Projets en Vedette',
@@ -271,52 +232,57 @@ const translations = {
         'Une sélection de mes travaux récents, mettant en valeur mon expertise dans la création d\'applications web modernes.',
       viewAll: 'Voir tout sur GitHub',
       viewCase: 'Voir l\'étude de cas',
+      realProjects: 'Projets Réels',
+      demoProjects: 'Projets Démo',
       items: [
         {
           name: 'Amourshop',
           description:
-            'Un panneau d\'administration complet pour gérer les produits, commandes et données clients avec des analyses en temps réel.',
+            'Une boutique en ligne enchantée proposant des vêtements colorés, confortables et sûrs pour les enfants de tout âge. Des tenues du quotidien pleines de fantaisie aux habits de cérémonie, chaque pièce est conçue pour le bonheur des petits et la tranquillité des parents.',
         },
         {
-          name: 'Page de Destination SaaS',
+          name: 'Badi-Suspension',
           description:
-            'Une page de destination à fort taux de conversion pour un produit SaaS avec des animations fluides.',
+            'Services professionnels de réparation et d\'entretien de suspension pour une conduite fluide, sûre et toujours prête. Pièces de qualité, mains expertes, résultats rapides.',
         },
         {
-          name: 'Modèle de Portfolio',
+          name: 'LUMINA',
           description:
-            'Un modèle de portfolio moderne et épuré conçu pour les professionnels créatifs afin de présenter leurs travaux.',
+            'Une boutique en ligne tendance proposant des vêtements féminins modernes et élégants pour toutes les occasions, où la mode rencontre le confort et l\'élégance.',
+        },
+        {
+          name: 'Men Styles',
+          description: 'Un magasin en ligne moderne proposant des vêtements élégants et tendance pour hommes pour toutes les occasions. Des vêtements décontractés pour le quotidien aux looks formels raffinés, exprimez votre style avec confiance.',
+        },
+        {
+          name: 'ASIAN AVENUE',
+          description:
+            'Un voyage savoureux à travers le meilleur de la cuisine asiatique, des woks parfumés aux soupes de nouilles généreuses. Ingrédients frais, saveurs intenses, expérience inoubliable.',
+        },
+        {
+          name: 'Barber Shop',
+          description:
+            'Un salon de coiffure haut de gamme offrant des coupes précises, des dégradés nets et des rasages classiques. Là où le style rencontre le savoir-faire pour un résultat impeccable.',
         },
       ],
     },
-    about: {
-      heading: 'À Propos de Moi',
-      p1: 'Je suis Ayub, développeur frontend spécialisé dans la création de sites web modernes, responsives et conviviaux avec React.',
-      p2: 'Passionné par un code propre et un design intuitif, je fais le lien entre la logique backend complexe et des expériences utilisateur fluides. J\'aime transformer des idées créatives en applications web fonctionnelles.',
-      p3: 'Quand je ne code pas, je me tiens au courant des nouvelles tendances en design, je contribue à des projets open-source ou j\'apprends les dernières avancées de l\'écosystème web.',
-      yearsExp: 'Ans d\'Expérience',
-      projectsDone: 'Projets Réalisés',
-      happyClients: 'Clients Satisfaits',
-      skills: 'Mes Compétences',
-      learningTitle: 'Toujours en apprentissage',
-      learningDesc:
-        'J\'explore actuellement Next.js 15 et les patterns d\'animation avancés avec Motion.',
-    },
+    about: {},
     contact: {
-      heading: 'Travaillons Ensemble',
-      subheading:
-        'Vous avez un projet en tête ou souhaitez simplement dire bonjour ? N\'hésitez pas à me contacter. Je suis toujours ouvert à de nouveaux projets et idées créatives.',
-      emailMe: 'M\'envoyer un email',
-      followMe: 'Me suivre',
-      name: 'Nom',
-      email: 'Email',
-      message: 'Message',
-      namePlaceholder: 'Jean Dupont',
-      emailPlaceholder: 'jean@exemple.com',
-      messagePlaceholder: 'Parlez-moi de votre projet...',
-      send: 'Envoyer le Message',
-      sending: 'Envoi en cours...',
-      sent: 'Message Envoyé !',
+      testimonials: [
+        {
+          quote: " Le site web qu'Ayoub a créé pour moi a complètement transformé mon activité. Mon taux de conversion a augmenté jusqu'à 85% et j'ai gagné bien plus de clients. Un travail vraiment remarquable ! ",
+          name: "Imad Lahcen",
+          title: "Propriétaire de Amorshop",
+        },
+        {
+          quote: "Le site web qu'Ayoub a créé pour moi a rendu la gestion des rendez-vous incroyablement simple et m'a fait gagner énormément de temps. Mon activité n'a jamais aussi bien tourné ! ",
+          name: "Badis",
+          title: "Propriétaire de Badi Suspension",
+        }
+      ],
+      ctaHeading: "Prêt à construire l'avenir ?",
+      ctaSubheading: "J'accepte actuellement des projets sélectionnés pour 2024. Discutons de la manière dont l'IA peut transformer votre empreinte numérique.",
+      ctaButton: "Initier la Connexion",
     },
     footer: {
       tagline: 'Construire le futur du web, un pixel à la fois.',

@@ -54,24 +54,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-4 ${
-        isScrolled ? 'pt-2' : 'pt-4'
-      }`}
+      className={`fixed w-screen top-0 inset-x-0 z-50 transition-all duration-300 px-4 py-4 ${isScrolled ? 'pt-2' : 'pt-4'
+        }`}
     >
       <div
-        className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-md shadow-sm border border-gray-200/50 py-3 px-6'
+        className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${isScrolled
+            ? 'bg-black/40 backdrop-blur-md shadow-sm border border-white/10 py-3 px-6'
             : 'bg-transparent py-4 px-6'
-        }`}
+          }`}
       >
         <div className="flex items-center justify-between">
           <a
             href="#home"
             onClick={(e) => scrollToSection(e, '#home')}
-            className="text-2xl font-bold text-blue-600 tracking-tight"
+            className="text-2xl font-bold text-[#00F2FF] tracking-tight"
           >
-            Ayub<span className="text-gray-900">Dev</span>
+            Ayub<span className="text-white">Dev</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -81,7 +79,7 @@ export default function Navbar() {
                 key={key}
                 href={NAV_HREFS[key]}
                 onClick={(e) => scrollToSection(e, NAV_HREFS[key])}
-                className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-sm font-medium text-white/80 hover:text-[#00F2FF] transition-colors"
               >
                 {t.nav[key]}
               </a>
@@ -91,7 +89,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold text-white/80 hover:text-[#00F2FF] hover:bg-white/5 transition-all"
                 aria-label="Switch language"
               >
                 <Globe size={16} />
@@ -105,7 +103,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-100 p-1 min-w-[110px] z-50"
+                    className="absolute end-0 top-full mt-2 bg-[#120018]/95 backdrop-blur-md rounded-xl shadow-xl border border-white/10 p-1 min-w-[110px] z-50"
                   >
                     {LANGS.map((l) => (
                       <button
@@ -114,11 +112,10 @@ export default function Navbar() {
                           setLang(l.code);
                           setIsLangOpen(false);
                         }}
-                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                          lang === l.code
-                            ? 'bg-blue-50 text-blue-600'
-                            : 'text-gray-600 hover:bg-gray-50'
-                        }`}
+                        className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${lang === l.code
+                            ? 'bg-[#00F2FF]/20 text-[#00F2FF]'
+                            : 'text-white/80 hover:bg-white/5'
+                          }`}
                       >
                         <span>{l.flag}</span>
                         <span>{l.label}</span>
@@ -131,7 +128,7 @@ export default function Navbar() {
 
             <button
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-all shadow-sm hover:shadow-md active:scale-95"
+              className="bg-[#00F2FF] text-[#120018] px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-[#00F2FF]/80 transition-all shadow-[0_0_15px_rgba(0,242,255,0.4)] hover:shadow-[0_0_25px_rgba(0,242,255,0.6)] active:scale-95"
             >
               {t.nav.hireMe}
             </button>
@@ -139,7 +136,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors"
+            className="md:hidden p-2 text-white/80 hover:text-[#00F2FF] transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -154,7 +151,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-4 right-4 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:hidden z-40"
+            className="absolute top-24 inset-x-4 bg-[#120018]/95 backdrop-blur-xl rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-white/10 p-6 md:hidden z-40"
           >
             <div className="flex flex-col space-y-4">
               {NAV_KEYS.map((key) => (
@@ -162,7 +159,7 @@ export default function Navbar() {
                   key={key}
                   href={NAV_HREFS[key]}
                   onClick={(e) => scrollToSection(e, NAV_HREFS[key])}
-                  className="text-lg font-medium text-gray-600 hover:text-blue-600 transition-colors"
+                  className="text-lg font-medium text-white/80 hover:text-[#00F2FF] transition-colors"
                 >
                   {t.nav[key]}
                 </a>
@@ -174,11 +171,10 @@ export default function Navbar() {
                   <button
                     key={l.code}
                     onClick={() => setLang(l.code)}
-                    className={`flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
-                      lang === l.code
-                        ? 'bg-blue-600 text-white border-blue-600'
-                        : 'text-gray-600 border-gray-200 hover:border-blue-300'
-                    }`}
+                    className={`flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${lang === l.code
+                        ? 'bg-[#00F2FF] text-[#120018] border-[#00F2FF]'
+                        : 'text-white/60 border-white/10 hover:border-[#00F2FF]/50 hover:text-white'
+                      }`}
                   >
                     {l.flag} {l.label}
                   </button>
@@ -187,7 +183,7 @@ export default function Navbar() {
 
               <button
                 onClick={(e) => scrollToSection(e, '#contact')}
-                className="bg-blue-600 text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition-all shadow-sm"
+                className="bg-[#00F2FF] text-[#120018] px-6 py-3 rounded-xl text-base font-bold hover:bg-[#00F2FF]/80 transition-all shadow-[0_0_15px_rgba(0,242,255,0.4)]"
               >
                 {t.nav.hireMe}
               </button>

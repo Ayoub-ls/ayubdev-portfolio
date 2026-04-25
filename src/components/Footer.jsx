@@ -7,14 +7,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-gray-100 bg-white px-4">
+    <footer className="py-12 border-t border-white/10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start">
-            <a href="#home" className="text-2xl font-bold text-blue-600 tracking-tight mb-2">
-              Ayub<span className="text-gray-900">Dev</span>
+            <a href="#home" className="text-2xl font-bold text-[#00F2FF] tracking-tight mb-2">
+              Ayub<span className="text-white">Dev</span>
             </a>
-            <p className="text-gray-500 text-sm">{t.footer.tagline}</p>
+            <p className="text-white/60 text-sm">{t.footer.tagline}</p>
           </div>
 
           <div className="flex items-center space-x-6">
@@ -24,7 +24,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-600 transition-colors"
+                className="text-white/40 hover:text-[#00F2FF] transition-colors"
                 title={social.name}
               >
                 <social.icon size={20} />
@@ -33,15 +33,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-xs">
+        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/40 text-xs">
             © {currentYear} AyubDev. {t.footer.rights}
           </p>
           <div className="flex items-center space-x-6">
-            <a href="#" className="text-gray-400 text-xs hover:text-gray-600">
+            <a href="#" className="text-white/40 text-xs hover:text-[#00F2FF] transition-colors">
               {t.footer.privacy}
             </a>
-            <a href="#" className="text-gray-400 text-xs hover:text-gray-600">
+            <a href="#" className="text-white/40 text-xs hover:text-[#00F2FF] transition-colors">
               {t.footer.terms}
             </a>
           </div>
